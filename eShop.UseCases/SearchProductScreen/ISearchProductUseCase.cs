@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eShop.UseCases.SearchProductScreen.Interfaces
+namespace eShop.UseCases.SearchProductScreen
 {
-    public interface ISearchProduct
+    public interface ISearchProductUseCase
     {
         public IEnumerable<Product> Execute(string filter);
         public IEnumerable<Product> Execute();

@@ -1,6 +1,5 @@
 ﻿using eShop.CoreBusiness.Models;
 using eShop.UseCases.PluginInterfaces;
-using eShop.UseCases.SearchProductScreen.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace eShop.UseCases.SearchProductScreen
 {
-    public class SearchProduct : ISearchProduct
+    public class SearchProductUseCase : ISearchProductUseCase
     {
         private readonly IProductRepository productRepository;
-        public SearchProduct(IProductRepository productRepository)
+        public SearchProductUseCase(IProductRepository productRepository)
         {
             this.productRepository = productRepository;
         }

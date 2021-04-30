@@ -1,18 +1,17 @@
 ﻿using eShop.CoreBusiness.Models;
 using eShop.UseCases.PluginInterfaces;
-using eShop.UseCases.SearchProductScreen.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eShop.UseCases.SearchProductScreen
+namespace eShop.UseCases.ViewProductScreen
 {
-    public class ViewProduct : IViewProduct
+    public class ViewProductUseCase : IViewProductUseCase
     {
         private readonly IProductRepository productRepository;
-        public ViewProduct(IProductRepository productRepository)
+        public ViewProductUseCase(IProductRepository productRepository)
         {
             this.productRepository = productRepository;
         }

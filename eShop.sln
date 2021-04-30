@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.Web", "eShop.Web\eShop.Web.csproj", "{4CD8C45A-F183-4265-A2C7-1791877CA021}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShop.Web", "eShop.Web\eShop.Web.csproj", "{4CD8C45A-F183-4265-A2C7-1791877CA021}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShop.CoreBusiness", "eShop.CoreBusiness\eShop.CoreBusiness.csproj", "{772DD44D-10E1-4C73-BADF-0FDAB8CDEFC4}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShop.UseCases", "eShop.UseCases\eShop.UseCases.csproj", "{3FA23AA7-423C-4C8B-A5EB-45AF96D87425}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{BB0744C0-509F-4E66-8A2E-4C98EB665FD4}"
 EndProject
@@ -15,11 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShop.DataStore.HardCode", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "eShop.Web.Modules", "eShop.Web.Modules", "{F4A2E1E0-B2A5-4619-A038-A2A11EABB983}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.Web.Common", "eShop.Web.Modules\eShop.Web.Common\eShop.Web.Common.csproj", "{3F39FB12-744E-4894-A7C6-4FE0D205A66B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShop.Web.Common", "eShop.Web.Modules\eShop.Web.Common\eShop.Web.Common.csproj", "{3F39FB12-744E-4894-A7C6-4FE0D205A66B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.Web.Customer", "eShop.Web.Modules\eShop.Web.Customer\eShop.Web.Customer.csproj", "{B63ADB08-4F7E-4145-A028-60B4D343CA07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShop.Web.AdminPortal", "eShop.Web.Modules\eShop.Web.AdminPortal\eShop.Web.AdminPortal.csproj", "{DFFD3A1F-2BBA-4CFF-9106-37151CC74DD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.Web.AdminPortal", "eShop.Web.AdminPortal\eShop.Web.AdminPortal.csproj", "{39804E71-6B07-480A-9715-63108FEC7CFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShop.UseCases", "eShop.UseCases\eShop.UseCases.csproj", "{DD83919B-2DBF-4C52-A7B5-42ACDB85AAE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.Web.CustomerPortal", "eShop.Web.Modules\eShop.Web.CustomerPortal\eShop.Web.CustomerPortal.csproj", "{E1B4AA71-849C-46BD-BC89-CFA8977AFDF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,6 @@ Global
 		{772DD44D-10E1-4C73-BADF-0FDAB8CDEFC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{772DD44D-10E1-4C73-BADF-0FDAB8CDEFC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{772DD44D-10E1-4C73-BADF-0FDAB8CDEFC4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3FA23AA7-423C-4C8B-A5EB-45AF96D87425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FA23AA7-423C-4C8B-A5EB-45AF96D87425}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3FA23AA7-423C-4C8B-A5EB-45AF96D87425}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3FA23AA7-423C-4C8B-A5EB-45AF96D87425}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0E577CC6-1770-4DB8-98F1-F2FDDBAB5BD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0E577CC6-1770-4DB8-98F1-F2FDDBAB5BD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E577CC6-1770-4DB8-98F1-F2FDDBAB5BD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,14 +43,18 @@ Global
 		{3F39FB12-744E-4894-A7C6-4FE0D205A66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F39FB12-744E-4894-A7C6-4FE0D205A66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F39FB12-744E-4894-A7C6-4FE0D205A66B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B63ADB08-4F7E-4145-A028-60B4D343CA07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B63ADB08-4F7E-4145-A028-60B4D343CA07}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B63ADB08-4F7E-4145-A028-60B4D343CA07}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B63ADB08-4F7E-4145-A028-60B4D343CA07}.Release|Any CPU.Build.0 = Release|Any CPU
-		{39804E71-6B07-480A-9715-63108FEC7CFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{39804E71-6B07-480A-9715-63108FEC7CFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{39804E71-6B07-480A-9715-63108FEC7CFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{39804E71-6B07-480A-9715-63108FEC7CFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFFD3A1F-2BBA-4CFF-9106-37151CC74DD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFFD3A1F-2BBA-4CFF-9106-37151CC74DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFFD3A1F-2BBA-4CFF-9106-37151CC74DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFFD3A1F-2BBA-4CFF-9106-37151CC74DD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD83919B-2DBF-4C52-A7B5-42ACDB85AAE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD83919B-2DBF-4C52-A7B5-42ACDB85AAE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD83919B-2DBF-4C52-A7B5-42ACDB85AAE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD83919B-2DBF-4C52-A7B5-42ACDB85AAE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1B4AA71-849C-46BD-BC89-CFA8977AFDF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1B4AA71-849C-46BD-BC89-CFA8977AFDF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1B4AA71-849C-46BD-BC89-CFA8977AFDF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1B4AA71-849C-46BD-BC89-CFA8977AFDF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,8 +62,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0E577CC6-1770-4DB8-98F1-F2FDDBAB5BD5} = {BB0744C0-509F-4E66-8A2E-4C98EB665FD4}
 		{3F39FB12-744E-4894-A7C6-4FE0D205A66B} = {F4A2E1E0-B2A5-4619-A038-A2A11EABB983}
-		{B63ADB08-4F7E-4145-A028-60B4D343CA07} = {F4A2E1E0-B2A5-4619-A038-A2A11EABB983}
-		{39804E71-6B07-480A-9715-63108FEC7CFF} = {F4A2E1E0-B2A5-4619-A038-A2A11EABB983}
+		{DFFD3A1F-2BBA-4CFF-9106-37151CC74DD2} = {F4A2E1E0-B2A5-4619-A038-A2A11EABB983}
+		{E1B4AA71-849C-46BD-BC89-CFA8977AFDF0} = {F4A2E1E0-B2A5-4619-A038-A2A11EABB983}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {84B9B5E0-B630-4D26-A613-AFB4CC18D6F2}
