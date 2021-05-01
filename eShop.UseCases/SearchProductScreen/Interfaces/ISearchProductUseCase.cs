@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eShop.UseCases.SearchProductScreen
+namespace eShop.UseCases.SearchProductScreen.Interfaces
 {
     public interface ISearchProductUseCase
     {

@@ -1,7 +1,9 @@
 using eShop.DataStore.HardCode;
 using eShop.UseCases.PluginInterfaces;
 using eShop.UseCases.SearchProductScreen;
+using eShop.UseCases.SearchProductScreen.Interfaces;
 using eShop.UseCases.ViewProductScreen;
+using eShop.UseCases.ViewProductScreen.Interfaces;
 using eShop.Web.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

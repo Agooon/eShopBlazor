@@ -1,5 +1,6 @@
 ﻿using eShop.CoreBusiness.Models;
 using eShop.UseCases.PluginInterfaces;
+using eShop.UseCases.SearchProductScreen.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
