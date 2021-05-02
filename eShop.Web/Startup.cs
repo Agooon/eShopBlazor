@@ -32,6 +32,7 @@ namespace eShop.Web
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+
             services.AddSingleton<IProductRepository, ProductRepository>();
 
             services.AddScoped<IShoppingCart, eShop.ShoppingCart.LocalStorage.ShoppingCart>();
@@ -41,6 +42,8 @@ namespace eShop.Web
             services.AddTransient<ISearchProductUseCase, SearchProductUseCase>();
             services.AddTransient<IAddProductToCartUseCase, AddProductToCartUseCase>();
             services.AddTransient<IViewShoppingCartUseCase, ViewShoppingCartUseCase>();
+            services.AddTransient<IDeleteProductUseCase, DeleteProductUseCase>();
+            services.AddTransient<IUpdateQuantityUseCase, UpdateQuantityUseCase>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

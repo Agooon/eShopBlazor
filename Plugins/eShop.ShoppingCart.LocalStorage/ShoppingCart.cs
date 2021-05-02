@@ -73,7 +73,7 @@ namespace eShop.ShoppingCart.LocalStorage
             var lineItem = order.LineItems.SingleOrDefault(x => x.ProductId == productId);
 
             if (lineItem != null)
-                lineItem.Quantity+=quantity;
+                lineItem.Quantity=quantity;
             await SetOrder(order);
 
             return order;

@@ -1,0 +1,31 @@
+﻿@implements IDisposable
+@inject IShoppingCartStateStore shoppingCartStateStore
+
+<div>
+    Cart:&nbsp;@lineItemsCount
+</div>
+
+
+@code{
+    private int lineItemsCount = 0;
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            shoppingCartStateStore.AddStateChangeListeners(HandleShoppingCartStateChange);
+            HandleShoppingCartStateChange();
+        }
+    }
+
+    private async void HandleShoppingCartStateChange()
+    {
+        lineItemsCount = await shoppingCartStateStore.GetItemsCount();
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        shoppingCartStateStore.RemoveStateChangeListeners(HandleShoppingCartStateChange);
+    }
+}
