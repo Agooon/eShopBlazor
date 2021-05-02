@@ -8,6 +8,8 @@
     <ProjectReference Include="..\eShop.UseCases\eShop.UseCases.csproj" />
     <ProjectReference Include="..\eShop.Web.Modules\eShop.Web.CustomerPortal\eShop.Web.CustomerPortal.csproj" />
     <ProjectReference Include="..\Plugins\eShop.DataStore.HardCode\eShop.DataStore.HardCode.csproj" />
+    <ProjectReference Include="..\Plugins\eShop.ShoppingCart.LocalStorage\eShop.ShoppingCart.LocalStorage.csproj" />
+    <ProjectReference Include="..\plugins\eShop.StateStore.DI\eShop.StateStore.DI.csproj" />
   </ItemGroup>
 
 </Project>

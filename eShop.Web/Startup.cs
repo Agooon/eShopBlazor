@@ -1,7 +1,12 @@
 using eShop.DataStore.HardCode;
+using eShop.StateStore.DI;
 using eShop.UseCases.PluginInterfaces;
+using eShop.UseCases.PluginInterfaces.StateStore;
+using eShop.UseCases.PluginInterfaces.UI;
 using eShop.UseCases.SearchProductScreen;
 using eShop.UseCases.SearchProductScreen.Interfaces;
+using eShop.UseCases.ShoppingCartScreen;
+using eShop.UseCases.ShoppingCartScreen.Interfaces;
 using eShop.UseCases.ViewProductScreen;
 using eShop.UseCases.ViewProductScreen.Interfaces;
 using eShop.Web.Data;
@@ -10,7 +15,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
 namespace eShop.Web
 {
     public class Startup
@@ -28,14 +32,15 @@ namespace eShop.Web
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
-
-
-
             services.AddSingleton<IProductRepository, ProductRepository>();
+
+            services.AddScoped<IShoppingCart, eShop.ShoppingCart.LocalStorage.ShoppingCart>();
+            services.AddScoped<IShoppingCartStateStore, ShoppingCartStateStore>();
 
             services.AddTransient<IViewProductUseCase, ViewProductUseCase>();
             services.AddTransient<ISearchProductUseCase, SearchProductUseCase>();
+            services.AddTransient<IAddProductToCartUseCase, AddProductToCartUseCase>();
+            services.AddTransient<IViewShoppingCartUseCase, ViewShoppingCartUseCase>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
