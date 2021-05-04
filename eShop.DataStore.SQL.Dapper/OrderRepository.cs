@@ -1,10 +1,8 @@
 ﻿using eShop.CoreBusiness.Models;
 using eShop.DataStore.SQL.Dapper.Helpers;
-using System;
+using eShop.UseCases.PluginInterfaces.DataStore;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace eShop.DataStore.SQL.Dapper
 {

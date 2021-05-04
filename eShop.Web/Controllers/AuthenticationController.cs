@@ -23,7 +23,7 @@ namespace eShop.Web.Controllers
                     new Claim(ClaimTypes.Email, "admin@eshop.com"),
                     new Claim(ClaimTypes.HomePhone, "123456789"),
                 };
-                var userIdentity = new ClaimsIdentity("eShop.CookieAuth");
+                var userIdentity = new ClaimsIdentity(userClaims,"eShop.CookieAuth");
                 var userPrincipal = new ClaimsPrincipal(userIdentity);
 
                 //var userPrincipal = new ClaimsPrincipal();

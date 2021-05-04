@@ -1,6 +1,8 @@
 using eShop.CoreBusiness.Services;
 using eShop.CoreBusiness.Services.Interfaces;
-using eShop.DataStore.HardCode;
+//using eShop.DataStore.HardCode;
+using eShop.DataStore.SQL.Dapper;
+using eShop.DataStore.SQL.Dapper.Helpers;
 using eShop.StateStore.DI;
 using eShop.UseCases.AdminPortal.OrderDetailScreen;
 using eShop.UseCases.AdminPortal.OutstandingOrdersScreen;
@@ -49,11 +51,17 @@ namespace eShop.Web
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
-            services.AddSingleton<IProductRepository, ProductRepository>();
-            services.AddSingleton<IOrderRepository, OrderRepository>();
+            // For memory testing
+            //services.AddSingleton<IProductRepository, ProductRepository>();
+            //services.AddSingleton<IOrderRepository, OrderRepository>();
 
             services.AddScoped<IShoppingCart, eShop.ShoppingCart.LocalStorage.ShoppingCart>();
             services.AddScoped<IShoppingCartStateStore, ShoppingCartStateStore>();
+
+            // Aplication transients
+            services.AddTransient<IDataAccess>(sp => new DataAccess(Configuration.GetConnectionString("Default")));
+            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
 
             // Customer Portla Transients
             services.AddTransient<IViewProductUseCase, ViewProductUseCase>();
