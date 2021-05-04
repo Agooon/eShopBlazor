@@ -37,6 +37,15 @@ namespace eShop.Web
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();
+            services.AddAuthentication("eShop.CookieAuth")
+                .AddCookie("eShop.CookieAuth", config =>
+                {
+                    config.Cookie.Name = "eShop.CookieAuth";
+                    config.LoginPath = "/authenticate";
+                });
+
+
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
@@ -46,6 +55,7 @@ namespace eShop.Web
             services.AddScoped<IShoppingCart, eShop.ShoppingCart.LocalStorage.ShoppingCart>();
             services.AddScoped<IShoppingCartStateStore, ShoppingCartStateStore>();
 
+            // Customer Portla Transients
             services.AddTransient<IViewProductUseCase, ViewProductUseCase>();
             services.AddTransient<ISearchProductUseCase, SearchProductUseCase>();
             services.AddTransient<IAddProductToCartUseCase, AddProductToCartUseCase>();
@@ -56,6 +66,7 @@ namespace eShop.Web
             services.AddTransient<IOrderService, OrderService>();
             services.AddTransient<IViewOrderConfirmationUseCase, ViewOrderConfirmationUseCase>();
 
+            // Admin Panel Transients
             services.AddTransient<IProcessOrderUseCase, ProcessOrderUseCase>();
             services.AddTransient<IViewOrderDetailUseCase, ViewOrderDetailUseCase>();
             services.AddTransient<IViewOutstandingOrderUseCase, ViewOutstandingOrderUseCase>();
@@ -81,8 +92,12 @@ namespace eShop.Web
 
             app.UseRouting();
 
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });
