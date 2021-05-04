@@ -1,4 +1,5 @@
-﻿
+﻿@inject NavigationManager navigationManager
+
 <div class="card m-2" style="width: 25rem;">
     <div class="card-body">
         <h5 class="card-title">Order Summary</h5>
@@ -36,8 +37,10 @@
             </div>
         </div>
     </div>
-
-    <button class="button btn-primary" @onclick="PlaceOrder">Place your order</button>
+    @if (!HidePlaceOrder)
+    {
+        <button class="button btn-primary" @onclick="PlaceOrder">Place your order</button>
+    }
 
 </div>
 
@@ -47,6 +50,9 @@
 
     [Parameter]
     public Order Order { get; set; }
+
+    [Parameter]
+    public bool HidePlaceOrder { get; set; } = false;
 
     protected override void OnParametersSet()
     {
@@ -62,6 +68,6 @@
 
     private void PlaceOrder()
     {
-
+        navigationManager.NavigateTo("/PlaceOrder");
     }
 }
