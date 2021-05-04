@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace eShop.UseCases.AdminPortal.OrderDetailScreen
 {
-    public class ProcessOrderUseCase
+    public class ProcessOrderUseCase : IProcessOrderUseCase
     {
         private readonly IOrderRepository orderRepository;
         private readonly IOrderService orderService;

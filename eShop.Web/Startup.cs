@@ -2,6 +2,9 @@ using eShop.CoreBusiness.Services;
 using eShop.CoreBusiness.Services.Interfaces;
 using eShop.DataStore.HardCode;
 using eShop.StateStore.DI;
+using eShop.UseCases.AdminPortal.OrderDetailScreen;
+using eShop.UseCases.AdminPortal.OutstandingOrdersScreen;
+using eShop.UseCases.AdminPortal.ProcessedOrdersScreen;
 using eShop.UseCases.OrderConfirmationScreen;
 using eShop.UseCases.PluginInterfaces;
 using eShop.UseCases.PluginInterfaces.DataStore;
@@ -52,6 +55,11 @@ namespace eShop.Web
             services.AddTransient<IPlaceOrderUseCase, PlaceOrderUseCase>();
             services.AddTransient<IOrderService, OrderService>();
             services.AddTransient<IViewOrderConfirmationUseCase, ViewOrderConfirmationUseCase>();
+
+            services.AddTransient<IProcessOrderUseCase, ProcessOrderUseCase>();
+            services.AddTransient<IViewOrderDetailUseCase, ViewOrderDetailUseCase>();
+            services.AddTransient<IViewOutstandingOrderUseCase, ViewOutstandingOrderUseCase>();
+            services.AddTransient<IViewProcessedOrderUseCase, ViewProcessedOrderUseCase>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
